@@ -55,4 +55,14 @@ public class ContentService {
     public void Testing(){
         contentRepository.test();
     }
+
+    public void goodContent(int id)
+    {
+        Content content = contentRepository.findById(id);
+        if(content != null)
+        {
+            content.setGood(content.getGood() + 1);
+            contentRepository.edit(content);
+        }
+    }
 }

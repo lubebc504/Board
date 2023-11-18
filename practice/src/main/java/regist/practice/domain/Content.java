@@ -34,4 +34,7 @@ public class Content {
     @OneToMany(mappedBy = "content", orphanRemoval = true)
     private List<Comment> comments;
 
+    @Column(name="good")
+    private int good = 0;
+
 }

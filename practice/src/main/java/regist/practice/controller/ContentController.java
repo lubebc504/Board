@@ -76,4 +76,11 @@ public class ContentController {
             System.out.println(i+":"+test.get(i));
         }
     }
+
+    @PostMapping("/content/like/{id}")
+    public String likeContent(@PathVariable int id)
+    {
+        contentService.goodContent(id);
+        return "redirect:/content/{id}";
+    }
 }
