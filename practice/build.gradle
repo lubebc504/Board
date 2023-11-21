@@ -33,6 +33,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation "com.squareup.okhttp3:okhttp:4.9.1"
 	implementation group:'org.json', name: 'json', version:'20090211'
+	// Jackson for JSON processing
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+	// Apache Commons Codec for Base64 and Hex
+	implementation 'commons-codec:commons-codec'
+
+	// Other Spring Boot dependencies
+	implementation 'org.springframework.boot:spring-boot-starter'
+	// Add other dependencies as needed
 }
 
 tasks.named('test') {

@@ -45,7 +45,7 @@ public class Api {
                 .addHeader("accept", "application/json")
                 .addHeader("content-type", "application/x-www-form-urlencoded")
                 .addHeader("Api-Key", "2e969fdde4db75b5abbe099890df4062")
-                .addHeader("Api-Nonce", "System.currentTimeMillis()")
+                .addHeader("Api-Nonce", String.valueOf(System.currentTimeMillis()))
                 .addHeader("Api-Sign", "상세 가이드 참고")
                 .build();
 
