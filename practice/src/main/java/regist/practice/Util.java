@@ -10,8 +10,9 @@ import java.util.Map.Entry;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.google.common.io.BaseEncoding;
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+//import com.google.common.io.BaseEncoding;
+//import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import org.apache.xerces.impl.dv.util.Base64;
 
 public class Util {
 
