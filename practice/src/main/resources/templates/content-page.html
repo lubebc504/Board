@@ -30,6 +30,13 @@
             <button th:formaction="@{/content/delete/{id} (id=${content.id})}"
                     type="submit">삭제</button>
             <div>
+               <span>작성자</span>
+                <input type="text" id="commentWriter" name="commentWriter">
+                <span>댓글 내용</span>
+<!--                <input type="text" id="commentText" name="commentText" width="200px">-->
+                <textarea id="commentText" name="commentText"></textarea>
+                <button th:formaction="@{/content/addComment/{id} (id=${content.id})}" type="submit">댓글 추가</button>
+
                 <table>
                     <thead>
                     <tr>

@@ -25,7 +25,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group:'xerces', name: 'xercesImpl', version: '2.11.0'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -34,15 +33,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation "com.squareup.okhttp3:okhttp:4.9.1"
 	implementation group:'org.json', name: 'json', version:'20090211'
-	// Jackson for JSON processing
-	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'org.apache.poi:poi:5.0.0'
+	implementation 'org.apache.poi:poi-ooxml:5.0.0'
+	implementation group:'xerces', name: 'xercesImpl', version: '2.11.0'
 
-	// Apache Commons Codec for Base64 and Hex
-	implementation 'commons-codec:commons-codec'
-
-	// Other Spring Boot dependencies
-	implementation 'org.springframework.boot:spring-boot-starter'
-	// Add other dependencies as needed
 }
 
 tasks.named('test') {

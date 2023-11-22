@@ -4,6 +4,8 @@ package regist.practice.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import regist.practice.domain.TransactionHistory;
+import regist.practice.domain.Comment;
 import regist.practice.domain.Content;
 import regist.practice.repository.ContentRepository;
 
@@ -52,10 +54,6 @@ public class ContentService {
         return contentRepository.findById(id);
     }
 
-    public void Testing(){
-        contentRepository.test();
-    }
-
     public void goodContent(int id)
     {
         Content content = contentRepository.findById(id);
@@ -65,4 +63,13 @@ public class ContentService {
             contentRepository.edit(content);
         }
     }
+
+    public void saveComment(Comment comment, int id){
+        contentRepository.registComment(comment, contentRepository.findById(id));
+    }
+
+    public void excelDataSave(TransactionHistory t){
+        contentRepository.excelDataSave(t);
+    }
+
 }
