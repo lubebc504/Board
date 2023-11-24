@@ -36,8 +36,8 @@ public class ExcelController {
     @GetMapping("excel/show")
     public String test()
     {
-        
-        mergeservice.test();
+
+        mergeservice.groupbycointest();
         return "excel";
     }
 
