@@ -38,7 +38,9 @@ public class TransactionHistoryRepository {
 
     public List<Object[]> findcoin() {
         return new ArrayList<>(
-                EM.createQuery("SELECT coinName, count(state) FROM TransactionHistory c where state = '''   매도''' or state = '''자동매도''' GROUP BY coinName", Object[].class)
+                EM.createQuery("SELECT coinName, count(state) FROM TransactionHistory c WHERE c.state = ?1 OR c.state = ?2 GROUP BY coinName", Object[].class)
+                        .setParameter(1, "매도")
+                        .setParameter(2, "자동매도")
                         .getResultList());
     }
 }

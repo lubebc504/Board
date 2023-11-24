@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import regist.practice.service.ExcelSellMergeService;
+import regist.practice.service.ExcelService;
 import regist.practice.domain.TransactionHistory;
 import regist.practice.service.ContentService;
 
@@ -25,7 +25,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExcelController {
     private  final ContentService service;
-    private final ExcelSellMergeService mergeservice;
+    private final ExcelService mergeservice;
 
     //public final ExcelSellMergeService mergeService;
     @GetMapping("/excel")
@@ -36,7 +36,7 @@ public class ExcelController {
     @GetMapping("excel/show")
     public String test()
     {
-        mergeservice.resetCoinSellCounts();
+        
         mergeservice.test();
         return "excel";
     }

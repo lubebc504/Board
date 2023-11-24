@@ -1,11 +1,7 @@
 package regist.practice;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import jakarta.persistence.EntityManager;
-import okhttp3.*;
 import org.json.JSONException;
-import org.json.JSONObject;
-import regist.practice.service.ExcelSellMergeService;
 
 
 import java.io.IOException;
