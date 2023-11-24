@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import regist.practice.service.ExcelSellMergeService;
 import regist.practice.domain.TransactionHistory;
 import regist.practice.service.ContentService;
 
@@ -24,6 +25,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExcelController {
     private  final ContentService service;
+
+    //public final ExcelSellMergeService mergeService;
     @GetMapping("/excel")
     public String main() { // 1
         return "excel";
@@ -76,6 +79,12 @@ public class ExcelController {
         long afterTime = System.currentTimeMillis(); // 코드 실행 후에 시간 받아오기
         long secDiffTime = (afterTime - beforeTime); //두 시간에 차 계산
         System.out.println("시간차이(m) : "+secDiffTime);
+
+        //List<TransactionHistory> transList = new ArrayList<>();
+        //transList = mergeService.getAllContents();
+
+       // mergeService.mergeAndSave(transList);
+
 
 
         return "excel";

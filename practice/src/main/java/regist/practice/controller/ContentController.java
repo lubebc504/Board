@@ -24,7 +24,7 @@ public class ContentController {
     @GetMapping(value = {"", "/"})
     public String home(Model model) {
         model.addAttribute("contents", contentService.getAllContents());
-        return "home";
+        return "content-main";
     }
 
     // 글 쓰기 화면
