@@ -25,6 +25,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExcelController {
     private  final ContentService service;
+    private final ExcelSellMergeService mergeservice;
 
     //public final ExcelSellMergeService mergeService;
     @GetMapping("/excel")
@@ -32,6 +33,13 @@ public class ExcelController {
         return "excel";
     }
 
+    @GetMapping("excel/show")
+    public String test()
+    {
+        mergeservice.resetCoinSellCounts();
+        mergeservice.test();
+        return "excel";
+    }
 
     @PostMapping("/excel/read")
     public String readExcel(@RequestParam("file") MultipartFile file, Model model)
@@ -90,4 +98,5 @@ public class ExcelController {
         return "excel";
 
     }
+
 }

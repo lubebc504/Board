@@ -35,4 +35,10 @@ public class TransactionHistoryRepository {
 //        return EM.createQuery("SELECT c FROM Content c", Content.class).getResultList();
         return new ArrayList<>(EM.createQuery("SELECT c FROM TransactionHistory c", TransactionHistory.class).getResultList());
     }
+
+    public List<Object[]> findcoin() {
+        return new ArrayList<>(
+                EM.createQuery("SELECT coinName, count(state) FROM TransactionHistory c where state = '''   매도''' or state = '''자동매도''' GROUP BY coinName", Object[].class)
+                        .getResultList());
+    }
 }
