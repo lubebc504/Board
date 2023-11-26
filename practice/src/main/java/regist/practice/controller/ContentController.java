@@ -24,10 +24,11 @@ public class ContentController {
     @GetMapping(value = {"", "/"})
     public String home(Model model) {
         model.addAttribute("contents", contentService.getAllContents());
-        return "content-main";
+        return "home";
     }
 
     // 글 쓰기 화면
+
     @GetMapping("/content/write")
     public String writePage() {
         return "write-page";
